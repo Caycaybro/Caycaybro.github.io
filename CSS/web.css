@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  top: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+/* Navbar */
+.navbar {
+  display: flex; /*biar flexible untuk diatur*/
+  justify-content: space-between; /*sejajar secara horizontal*/
+  align-items: center;
+  padding: 1.4rem 7%; /*jika buka di mobile phone dll, akan disesuaikna 7%*/
+  background-color: rgba(1, 1, 1, 0.8);
+
+  /* supaya ketika halamanya di scrol navbar nya ttp diatas */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0 3rem;
+  text-decoration: none;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+  background-color: #fff;
+  border-radius: 25px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.parallax {
+  background-image: url("../IMG/3163.jpg");
+  background-size: cover;
+  height: 150vh;
+  background-attachment: fixed;
+  /* fixed, biar efek parallax */
+  background-position: center;
+}
+
+.city {
+  padding-top: 100px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.content {
+  background-image: url(../IMG/nightcity2.jpg);
+  height: 150vh;
+  background-size: cover;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 5em;
+  margin-top: 420px;
+  text-shadow: 3px 3px 10px grey;
+}
+p {
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 3px 3px 10px grey;
+  margin-left: 2rem;
+}
+
+h2 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 3px 3px 10px grey;
+  margin-left: 2rem;
+}
+
+.content p {
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 5px 5px 15px grey;
+  margin-left: 2rem;
+}
+
+button {
+  padding: 0.5rem;
+  border-radius: 25px;
+  background: linear-gradient(to bottom, #e182f9, #e932d0);
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 3s ease-in;
+}
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-100%);
+  /* transition: opacity 1s ease-in, transform 1s ease-in; */
+  transition: 2s;
+
+  /* margin-left: 5rem; */
+  border-radius: 5%;
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(100%);
+  /* transition: opacity 1s ease-in, transform 1s ease-in; */
+  transition: 2s;
+}
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+}

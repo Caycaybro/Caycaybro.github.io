@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../IMG/BC3.png" />
+    <title>Starry Night</title>
+    <link rel="stylesheet" href="../CSS/style.css" />
+  </head>
+  <body>
+    <div class="paralax">
+      <img src="../IMG/stars.jpg" id="stars" />
+      <img src="../IMG/meteorid.png" id="meteorid" />
+      <img
+        src="../IMG/rocket3D-removebg-preview.png"
+        id="rocket"
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 20%;
+          height: auto;
+          margin-top: 10rem;
+          left: 40%;
+        "
+      />
+      <h1 id="text">
+        Happy Birthday
+        <br />
+        Fiona Lim!
+      </h1>
+
+      <a href="web.html" id="button"
+        >Scroll down first, once you've finished reading, then click here!</a
+      >
+    </div>
+
+    <div class="description">
+      <h2 class="fade-up" style="text-align: center">Why Starry Night ???</h2>
+      <script>
+        // sebuah js untuk = ketika scroll sampai bagiannya, akan berubah beberapa style
+        window.addEventListener("scroll", fadeInElement);
+
+        function fadeInElement() {
+          var elements = document.getElementsByClassName("fade-up");
+          for (var i = 0; i < elements.length; i++) {
+            var element = elements[i];
+            var positionFromTop = element.getBoundingClientRect().top;
+
+            if (positionFromTop - window.innerHeight <= 0) {
+              element.style.opacity = "1"; // style opacity dalam css (.fade.up) diubah dari 0 menjadi 1
+              element.style.transform = "none"; // style transform dalam css (.fade-up) diubah dari ... menjadi none
+            }
+          }
+        }
+      </script>
+      <br />
+      <p class="fade-in-left">
+        So... <br />
+        The story goes... &#129488;<br />
+        Back then... <br />
+        There was a person's child... She told me a story, about how she once
+        witnessed a gathering of stars that were very numerous and extremely
+        beautiful (just like her, hia hia hia hia) and she also said that it was
+        the most beautiful collection of stars &#128559;. She had seen others,
+        but the one that stood out the most in terms of quantity and beauty was
+        the one she witnessed at that moment, according to her ~~ <br />
+        <br />
+      </p>
+      <p class="fade-in-right">
+        Then... at that moment, I tried to imagine the sight of those numerous
+        stars that she mentioned &#129300;. Because of that too, it gave me the
+        idea to give this website a starry night theme.(by the way in case you
+        forgot about it, the stars and rockets and the writing move hand in hand
+        as you scroll the screen) Hope you like it &#128578;.
+        <br />
+      </p>
+    </div>
+    <script src="../JS/script.js"></script>
+  </body>
+</html>
+<!-- 22-04-2023.21.25- 00.06 -->

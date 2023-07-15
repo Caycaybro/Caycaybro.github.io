@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../IMG/BC1.png" />
+    <title>3D Graphic Art</title>
+    <style>
+      .fade-in {
+        opacity: 0;
+        transform: translateX(-100%) rotate(-70deg);
+        /* jika tidak mau efek putar hapus saja rotate -180deg */
+        transition: opacity 1s ease-in, transform 1s ease-in;
+      }
+      @keyframes wave {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      .wave-text {
+        display: inline-block;
+        animation: wave 2s linear 1;
+        /* bisa linear infinite jadi looping terus   */
+      }
+      .fade-up {
+        opacity: 0;
+        transform: translateY(300%);
+        /* jika tidak mau efek putar hapus saja rotate -180deg */
+        transition: opacity 1s ease-in, transform 1s ease-in;
+      }
+    </style>
+  </head>
+  <body style="background-color: hsl(298, 80%, 90%)">
+    <div style="text-align: center; margin-top: 10rem">
+      <h1>
+        <span class="wave-text">H</span>
+        <span class="wave-text">A</span>
+        <span class="wave-text">P</span>
+        <span class="wave-text">P</span>
+        <span class="wave-text">Y</span>
+        <span class="wave-text"> </span>
+        <span class="wave-text">B</span>
+        <span class="wave-text">I</span>
+        <span class="wave-text">R</span>
+        <span class="wave-text">T</span>
+        <span class="wave-text">H</span>
+        <span class="wave-text">D</span>
+        <span class="wave-text">A</span>
+        <span class="wave-text">Y</span>
+        <span class="wave-text"> </span>
+        <span class="wave-text">F</span>
+        <span class="wave-text">I</span>
+        <span class="wave-text">O</span>
+        <span class="wave-text">N</span>
+        <span class="wave-text">A</span>
+        <span class="wave-text">&#10083;</span>
+      </h1>
+    </div>
+    <div
+      style="text-align: center; margin-top: 10rem; margin-bottom: 20rem"
+      class="fade-up"
+    >
+      <p>
+        Seriously, it's so foreign to me to touch about art anymore outside of
+        school.
+      </p>
+      <p>
+        As you know, I am not an expert in the field of creativity and the
+        beauty in this area of design expertise
+      </p>
+      <p>
+        But this will be my first work(for a birthday gift) which I really like
+        it. Hope you feel the same way. (please scroll down your screen)
+      </p>
+    </div>
+
+    <div
+      class="container"
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 5rem;
+      "
+    >
+      <img
+        style="
+          align-items: center;
+          top: 15rem;
+          width: 55%;
+          height: 55%;
+          margin-bottom: 1rem;
+        "
+        class="fade-in"
+        src="../IMG/test/real real real final pake ini.png"
+        alt=""
+      />
+    </div>
+    <script>
+      const waveTexts = document.getElementsByClassName("wave-text");
+
+      for (let i = 0; i < waveTexts.length; i++) {
+        waveTexts[i].style.animationDelay = `${i * 0.2}s`;
+      }
+      window.addEventListener("scroll", fadeInElement);
+
+      function fadeInElement() {
+        var fadeUpElements = document.getElementsByClassName("fade-up");
+        for (var i = 0; i < fadeUpElements.length; i++) {
+          var element = fadeUpElements[i];
+          var positionFromTop = element.getBoundingClientRect().top;
+
+          if (positionFromTop - window.innerHeight <= 0) {
+            element.style.opacity = "1";
+            element.style.transform = "translateX(0) rotate(0deg)";
+          }
+        }
+
+        var fadeInElements = document.getElementsByClassName("fade-in");
+        for (var i = 0; i < fadeInElements.length; i++) {
+          var element = fadeInElements[i];
+          var positionFromTop = element.getBoundingClientRect().top;
+
+          if (positionFromTop - window.innerHeight <= 0) {
+            element.style.opacity = "1";
+            element.style.transform = "translateX(0) rotate(0deg)";
+          }
+        }
+      }
+
+      window.addEventListener("load", fadeInElement);
+      window.addEventListener("scroll", fadeInElement);
+    </script>
+  </body>
+</html>
