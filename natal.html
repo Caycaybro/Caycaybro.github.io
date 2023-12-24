@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,user-scalable=no"
+    />
+    <title>Merry Christmas-Fiona Lim</title>
+    <!-- for dev -->
+    <link rel="stylesheet" href="src/css/christmas.css" />
+    <link rel="stylesheet" href="src/css/animate.css" />
+
+    <!-- for pro -->
+    <link rel="stylesheet" href="dist/css/app.css" />
+    <style>
+      body {
+        background-image: url(bg1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      #typed-text {
+        font-family: "Courier New", monospace;
+        font-size: 24px;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 2px solid #ffffff;
+        color: #ffffff;
+        text-align: center;
+        z-index: 1; /* Ensure text is above the image */
+        position: relative; /* Enable z-index property */
+        display: none; /* Hide text initially */
+      }
+
+      .santa-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 0; /* Set z-index to position image below text */
+      }
+
+      .santa {
+        width: 300px;
+        height: auto;
+        cursor: pointer; /* Change cursor to pointer on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <section class="loading-mask">
+      <section class="loading">
+        <div class="progress">
+          <div class="progres-bar"><i class="icon-car"></i></div>
+        </div>
+        <div id="typed-text">
+          <!-- Initially hidden text -->
+          Click on Santa to reveal the message!
+        </div>
+      </section>
+      <!-- end loading -->
+      <div class="container santa-container" id="santaContainer">
+        <a
+          href="javascript:;"
+          class="playBgMusic animate-notifylight"
+          id="j-playBgMusic"
+          onclick="revealText()"
+          Add
+          onclick
+          event
+          to
+          call
+          revealText
+          function
+          --
+        >
+          <img class="santa" src="santa_clickhere.png" alt=""
+        /></a>
+      </div>
+    </section>
+
+    <audio id="bgmusci" preload="load" loop="loop">
+      <source src="main.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script src="script.js"></script>
+    <script>
+      ISPRO = true;
+
+      function revealText() {
+        document.getElementById("typed-text").style.display = "block";
+        document.getElementById("santaContainer").style.display = "none";
+        startTyping();
+      }
+    </script>
+    <script src="https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js"></script>
+    <script>
+      var sf = new Snowflakes({
+        color: "#ffffff",
+      });
+    </script>
+    <!-- ... (code sebelumnya) ... -->
+
+    <script>
+      function startTyping() {
+        const christmasMessages = [
+          "Merry Christmas! Fiona Lim!😀",
+          "Dah, gitu aja, Bye :D",
+          "JK JK JK😊",
+          "Yahhh..... sebenarnya ini seharusnya saya kirim saat 00.00 yak😶‍🌫️",
+          "Tapi, hmmmm gimana yak, ada beberapa masalah kecil jadi telat dikit😁",
+          "dikit:v Yahhh..... gpplah ya 🫣",
+          "Jadi... kali ini rayain nya gk kat sini yak🥴",
+          "Padahal wa tadi pagi masih sempat mimpi le tiba-tiba balek HAHHAHAHA(ngarep-ngarep,jk)😶‍🌫️",
+          "Happy happy yaaaaaa kat sana rayain natalannya🎅😁",
+          "Website ini cukup seru tak, tuk natalan?❄️🎄",
+          "Seru lah ya:D (Bilang seru gk ko fi, wa buat nya aja terlalu seru, sampe gk siap siap🤣)",
+          "seru beneran, le gerakkan mouse, salju nya bisa ikutin😚 ",
+          "Jadi.... yah.... Merry Christmas!🎅❄️",
+          "May the warmth of Christmas🎅",
+          "bring joy and happiness to you and your family. ",
+          "May you be surrounded by love, peace, and joy.",
+          "Wishing you a joyful Christmas and a Happy New Year! 🎄🌟",
+          "(Habessss....)",
+          "(Seru juga lagunya :v)",
+        ];
+
+        const typedTextElement = document.getElementById("typed-text");
+        let index = 0;
+
+        function typeText() {
+          if (index < christmasMessages.length) {
+            let currentMessage = christmasMessages[index];
+            let currentLength = 0;
+
+            const typingInterval = setInterval(function () {
+              typedTextElement.textContent = currentMessage.slice(
+                0,
+                currentLength
+              );
+              currentLength++;
+
+              if (currentLength > currentMessage.length) {
+                clearInterval(typingInterval);
+                // Move to the next message after a pause
+                setTimeout(function () {
+                  index++;
+                  typeText();
+                }, 1000); // Adjust the pause time as needed
+              }
+            }, 100); // Adjust the typing speed (interval) as needed
+          }
+        }
+
+        // Start typing with the first message
+        typeText();
+      }
+    </script>
+
+    <!-- ... (code setelahnya) ... -->
+  </body>
+</html>
